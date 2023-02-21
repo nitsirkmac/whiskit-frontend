@@ -39,7 +39,8 @@ export default function Index({ recipe, createRecipe }) {
     }
 
     const loaded = () => 
-        recipe.map((recipe) => (
+    // recipe.map is not a function! 
+        recipe.map((recipe) => ( 
             <div key={recipe.id} className="recipe">
                 <Link to={`/recipes/${recipe.id}`}>
                     <h1> {recipe.name} </h1>
@@ -53,7 +54,7 @@ export default function Index({ recipe, createRecipe }) {
 
     return (
         <section>
-            <form onsubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <input 
                     type="text"
                     name="name"

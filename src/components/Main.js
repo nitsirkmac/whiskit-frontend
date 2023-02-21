@@ -4,7 +4,7 @@ import Index from "../pages/Index"
 import Show from "../pages/Show"
 
 
-function Main(props) {
+function Main() {
 
     const [ recipeList, setRecipeList ] = useState(null)
     // state to hold list of recipes
@@ -29,7 +29,9 @@ function Main(props) {
     }
     // function to create a new recipe
 
-    useEffect(() => getRecipeList(), [])
+    useEffect(() => {
+        getRecipeList()
+    }, [])
     // useEffect to make initial call for recipe list
 
 
@@ -39,8 +41,8 @@ function Main(props) {
     return (
         <main>
             <Routes>
-                <Route exact path='/' element={<Index recipe={recipe} createRecipe={createRecipe} />} />
-                <Route path="/recipes/:id" element={<Show recipe={recipe} />} />
+                <Route exact path='/' element={<Index recipe={recipeList} createRecipe={createRecipe} />} />
+                <Route path="/recipes/:id" element={<Show recipe={recipeList} />} />
             </Routes>
         </main>
     )
