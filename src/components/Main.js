@@ -6,7 +6,7 @@ import Show from "../pages/Show"
 
 function Main() {
 
-    const [ recipeList, setRecipeList ] = useState(null)
+    const [ recipeList, setRecipeList ] = useState([])
     // state to hold list of recipes
     const URL = "http://localhost:8000/recipes/"
 
@@ -29,6 +29,29 @@ function Main() {
     }
     // function to create a new recipe
 
+
+    // updateRecipe
+    const updateRecipe = async (recipe, id) => {
+        await fetch(URL + id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'Application/json',
+            },
+            body: JSON.stringify(recipe),
+        })
+        getRecipeList()
+    }
+
+
+    // deleteRecipe
+    const deleteRecipe = async (id) => {
+        await fetch(URL + id, {
+            method: 'DELETE',
+        })
+        getRecipeList()
+    }
+
+
     useEffect(() => {
         getRecipeList()
     }, [])
@@ -37,12 +60,27 @@ function Main() {
 
 // pass the recipe state and the create function to Index
 
+
+
     
     return (
         <main>
             <Routes>
-                <Route exact path='/' element={<Index recipe={recipeList} createRecipe={createRecipe} />} />
-                <Route path="/recipes/:id" element={<Show recipe={recipeList} />} />
+                <Route 
+                    path='/' 
+                    element={
+                    <Index 
+                        recipe={recipeList} 
+                        createRecipe={createRecipe} 
+                        />} />
+                <Route 
+                    path="/recipes/:id" 
+                    element={
+                        <Show 
+                            recipeList={recipeList} 
+                            deleteRecipe={deleteRecipe}
+                            updateRecipe={updateRecipe}
+                            />} />
             </Routes>
         </main>
     )
