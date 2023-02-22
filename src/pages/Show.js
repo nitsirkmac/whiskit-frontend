@@ -24,6 +24,11 @@ function Show({ recipeList, updateRecipe, deleteRecipe }) {
         navigate('/');
     }
 
+    const removeRecipe = () => {
+        deleteRecipe(id)
+        navigate('/')
+    }
+
 
     return (
         <div className="recipe">
@@ -35,6 +40,9 @@ function Show({ recipeList, updateRecipe, deleteRecipe }) {
             <h4> {recipe.instructions} </h4>
             <h6> {recipe.tags} </h6>
             <h4> {recipe.review} </h4>
+            <button id='DELETE' onClick={removeRecipe}>
+                Remove Recipe
+            </button>
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text"
