@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { Routes, Route } from "react-router-dom"
+import EditRecipe from "../pages/EditRecipe"
 import Index from "../pages/Index"
 import Show from "../pages/Show"
-
+import NewRecipe from '../pages/NewRecipe'
 
 function Main() {
 
@@ -74,6 +75,13 @@ function Main() {
                         createRecipe={createRecipe} 
                         />} />
                 <Route 
+                    path='/recipes/new'
+                    element={
+                        <NewRecipe 
+                            createRecipe={createRecipe}
+                    />}
+                />
+                <Route 
                     path="/recipes/:id" 
                     element={
                         <Show 
@@ -81,6 +89,13 @@ function Main() {
                             deleteRecipe={deleteRecipe}
                             updateRecipe={updateRecipe}
                             />} />
+                <Route
+                    path="/recipes/:id/edit"
+                    element={
+                        <EditRecipe
+                        updateRecipe={updateRecipe}
+                        recipeList={recipeList}
+                    />} />
             </Routes>
         </main>
     )

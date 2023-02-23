@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom"
+import { NavStyle } from './appStyles'
+
 
 export default function Nav(props) {
     return (
-        <nav className="nav">
+        <NavStyle className="nav">
             <Link to="/">
-                <div>WhiskIt!</div>
+                <div>All Recipes</div>
             </Link>
+
+            <div> Favorites </div>
+            <div> Make It Again </div>
+            <div> Want To Make </div>
+            
             <Link to='/logout'>
                 <div>Logout</div>
             </Link>
-        </nav>
+        </NavStyle>
     )
 }
 
