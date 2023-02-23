@@ -24,9 +24,11 @@ User Specific models:\
 
 ## Wireframes
 
-
+![Wireframe1](public/wireframe1.jpg)
+![Wireframe2](public/wireframe2.jpg)
 ## Live Site
 
+whiskit.netlify.app
 
 ## Future Enhancements
 *FUTURE* As a user, I can share a recipe via email / text\
