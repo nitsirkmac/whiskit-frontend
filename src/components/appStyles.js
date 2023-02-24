@@ -15,13 +15,11 @@ export const images = {
 export const NavStyle = styled.nav`
     color: ${colors.taupe};
     display: flex;
-    justify-content: center;
-    align-items: space-between;
 `;
 
 export const Image = styled.img`
-    height: 150px;
-    width: 115px;
+    height: 200px;
+    width: 200px;
 `;
 
 export const Form = styled.form`
@@ -58,4 +56,16 @@ export const Ingredients = styled.div`
 export const Steps = styled.div`
     width: 260px;
     margin: 10px;
+`;
+
+export const Title = styled.div`
+    color: ${colors.red};
+    font-size: 20px;
+    margin: 10px;
+`;
+
+export const RecipeCard = styled.div`
+    margin: 15px;
+    border: 3px solid ${colors.brown};
+    width: 450px;
 `;

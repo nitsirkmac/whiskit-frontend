@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
-import { Image } from '../components/appStyles'
+import { Image, Title, RecipeCard } from '../components/appStyles'
 
 export default function Index({ recipe, createRecipe }) {
 
@@ -9,12 +9,12 @@ export default function Index({ recipe, createRecipe }) {
     const loaded = () => 
     // recipe.map is not a function! 
         recipe.map((recipe) => ( 
-            <div key={recipe.id} className="recipe">
+            <RecipeCard key={recipe.id} className="recipe">
                 <Link to={`/recipes/${recipe.id}`}>
-                    <h1> {recipe.name} </h1>
+                    <Title> {recipe.name} </Title>
                 </Link>
                 <Image src={recipe.image} alt={recipe.name} />
-            </div>
+            </RecipeCard>
         ))
 
     const loading = () => <h1>Loading...</h1>
@@ -22,7 +22,9 @@ export default function Index({ recipe, createRecipe }) {
 
     return (
         <section>
-  
+            <div>
+                <h1> whiskIt! </h1>
+            </div>
 
             {recipe ? loaded() : loading()}
         </section>

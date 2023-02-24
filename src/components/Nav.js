@@ -12,7 +12,9 @@ export default function Nav(props) {
             <div> Favorites </div>
             <div> Make It Again </div>
             <div> Want To Make </div>
-            
+
+            <Link 
+
             <Link to='/logout'>
                 <div>Logout</div>
             </Link>
