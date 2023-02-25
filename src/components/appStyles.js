@@ -9,7 +9,7 @@ export const colors = {
 
 // logo
 export const images = {
-    logo: 'https://i.imgur.com/GRf0dwN.png',
+    logo: '',
 };
 
 export const NavStyle = styled.nav`

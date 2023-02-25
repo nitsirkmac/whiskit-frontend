@@ -18,10 +18,7 @@ https://trello.com/b/zxpbYcSg/the-grimoire
 Main Directory Model:\
  Recipe\
 User Specific models:\
- Favorites,\
- MadeThis,\
- WantToMake\
- joined by user_id
+
 
 ## Wireframes
 

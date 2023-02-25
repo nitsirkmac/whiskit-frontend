@@ -23,7 +23,7 @@ export default function Index({ recipe, createRecipe }) {
     return (
         <section>
             <div>
-                <h1> whiskIt! </h1>
+                <Title> whiskIt! </Title>
             </div>
 
             {recipe ? loaded() : loading()}
