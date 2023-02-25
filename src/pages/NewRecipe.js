@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Info, Form, TextArea } from '../components/appStyles'
 
 
 export default function NewRecipe({ createRecipe }) {
@@ -24,6 +25,8 @@ export default function NewRecipe({ createRecipe }) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        const tagArray = recipeData.tags.split(", ")
+        recipeData.tags = tagArray
         createRecipe(recipeData);
         setRecipeData({
             name: "",
@@ -40,64 +43,64 @@ export default function NewRecipe({ createRecipe }) {
 
     return (
         <section>
-                      <form onSubmit={handleSubmit}>
-                <input 
+            <Form onSubmit={handleSubmit} action='recipes' method='POST'>
+                <Info 
                     type="text"
                     name="name"
                     placeholder="name"
                     value={recipeData.name}
                     onChange={handleChange}
                 />
-                <input 
+                <Info 
                     type="text"
                     name="created_by"
                     placeholder="created by"
                     value={recipeData.created_by}
                     onChange={handleChange}
                 />
-                <input 
+                <Info 
                     type="text"
                     name="prep_time"
                     placeholder="prep time"
                     value={recipeData.prep_time}
                     onChange={handleChange}
                 />
-                <input 
+                <Info 
                     type="text"
                     name="cook_time"
                     placeholder="cook time"
                     value={recipeData.cook_time}
                     onChange={handleChange}
                 />
-                <input 
+                <TextArea 
                     type="text"
                     name="ingredients"
                     placeholder="ingredients"
                     value={recipeData.ingredients}
                     onChange={handleChange}
                 />
-                <input 
+                <TextArea 
                     type="text"
                     name="instructions"
                     placeholder="instructions"
                     value={recipeData.instructions}
                     onChange={handleChange}
                 />
-                <input 
+                <Info 
                     type="text"
                     name="image"
                     placeholder="image"
                     value={recipeData.image}
                     onChange={handleChange}
                 />
-                <input 
+                <Info 
                     type="text"
                     name="tags"
-                    placeholder="tags"
+                    placeholder="tags (separate by comma ex: sweet, tart, etc)"
                     value={recipeData.tags}
                     onChange={handleChange}
                 />
-                <input 
+                <TextArea 
                     type="text"
                     name="review"
                     placeholder="review"
@@ -105,7 +108,7 @@ export default function NewRecipe({ createRecipe }) {
                     onChange={handleChange}
                 />
                 <input type="submit" value="Submit"/>
-            </form>
+            </Form>
         </section>
     )
 

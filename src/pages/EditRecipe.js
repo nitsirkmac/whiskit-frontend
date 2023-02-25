@@ -19,6 +19,8 @@ export default function EditRecipe({ recipeList, updateRecipe }) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        const tagArray = editRecipe.tags.split(", ")
+        editRecipe.tags = tagArray
         updateRecipe(editRecipe, id);
         navigate('/');
     }

@@ -13,7 +13,9 @@ export default function Nav(props) {
             <div> Make It Again </div>
             <div> Want To Make </div>
 
-            <Link 
+            <Link to='/recipes/new'>
+                <div>Add New Recipe</div>
+            </Link>
 
             <Link to='/logout'>
                 <div>Logout</div>

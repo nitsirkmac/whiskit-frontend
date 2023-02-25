@@ -15,6 +15,7 @@ export const images = {
 export const NavStyle = styled.nav`
     color: ${colors.taupe};
     display: flex;
+    justify-content: space-between;
 `;
 
 export const Image = styled.img`
@@ -67,5 +68,6 @@ export const Title = styled.div`
 export const RecipeCard = styled.div`
     margin: 15px;
     border: 3px solid ${colors.brown};
+    border-radius: 10px;
     width: 450px;
 `;
