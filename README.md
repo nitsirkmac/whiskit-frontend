@@ -26,7 +26,7 @@ User Specific models:\
 ![Wireframe2](public/wireframe2.jpg)
 ## Live Site
 
-whiskit.netlify.app
+amazing-kelpie-7043d4.netlify.app
 
 ## Future Enhancements
 *FUTURE* As a user, I can share a recipe via email / text\
