@@ -17,7 +17,15 @@ https://trello.com/b/zxpbYcSg/the-grimoire
 ## ERD
 Main Directory Model:\
  Recipe\
-User Specific models:\
+name = models.CharField(max_length=100)
+    created_by = models.CharField(max_length=100)
+    prep_time = models.CharField(max_length=50)
+    cook_time = models.CharField(max_length=50)
+    ingredients = models.TextField(
+    instructions = models.TextField()
+    image = models.CharField(max_length=300)
+    tags = ArrayField(models.CharField(max_length=200), null=True)
+    review = models.CharField(max_length=400)
 
 
 ## Wireframes
